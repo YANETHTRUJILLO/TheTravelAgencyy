@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Travel Agency</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Main container -->
+  <div class="login-container">
+   
+    <div class="login-image">
+      <img src="imagenes/login.jpg" alt="Imagen de fondo">
+    </div>
+
+    <!-- form-->
+    <div class="login-form">
+      <img src="imagenes/logoLogin.png" alt="Logo" class="logo-login">
+      <h2>Bienvenidos de nuevo</h2>
+
+      <form id="login-form" action="#" method="post"> <!-- Agregar ID al formulario -->
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Ingresa tu Email" required>
+
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" name="password" placeholder="Ingresa tu Contraseña" required>
+
+        <!-- Botón -->
+        <button type="submit">Iniciar sesión</button>
+      </form>
+
+      <!-- Registration link-->
+      <p class="register-text">¿Todavía no tienes una cuenta? 
+        <a href="registro.html" class="register-link">Regístrate aquí</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Vincular el archivo de JavaScript -->
+  <script src="js/login.js" defer></script> <!-- Asegúrate de agregar este enlace -->
+</body>
+</html>

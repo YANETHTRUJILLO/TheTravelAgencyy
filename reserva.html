@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>npx json-server --watch db.json Reserva</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/reservation.css"> 
+</head>
+<body>
+
+  <!-- Main container -->
+  <div class="reservation-container">
+    
+    <div class="reservation-image">
+      <img src="imagenes/formularioReserva.jpg" alt="Imagen de fondo">
+    </div>
+
+    <!-- form-->
+    <div class="reservation-form">
+      <div class="header">
+        <img src="imagenes/logoLogin.png" alt="Logo" class="logo-login">
+        <h2 class="reservation-title">Reserva Ahora</h2>
+      </div>
+
+      <form id="reservation-form" action="#" method="post">
+        <label for="checkin">Fecha de Ingreso</label>
+        <input type="date" id="checkin" name="checkin" required>
+
+        <label for="checkout">Fecha de Salida</label>
+        <input type="date" id="checkout" name="checkout" required>
+
+        <label for="adults">Número de Adultos</label>
+        <input type="number" id="adults" name="adults" min="1" value="1" required>
+
+        <label for="children">Número de Niños</label>
+        <input type="number" id="children" name="children" min="0" value="0">
+
+        <label>Tipo de Habitación</label>
+        <div class="room-type-container">
+          <div>
+            <input type="radio" id="sencilla" name="room_type" value="sencilla" required>
+            <label for="sencilla">Sencilla</label>
+          </div>
+          <div>
+            <input type="radio" id="doble" name="room_type" value="doble" required>
+            <label for="doble">Doble</label>
+          </div>
+        </div>
+
+        <button type="submit" class="reservar-btn">Reservar</button>
+      </form>
+
+      <!-- Confirmation popup-->
+      <div id="confirmation-popup" class="popup">
+        <div class="popup-content">
+          <span class="checkmark">✔️</span>
+          <h3>Reserva Exitosa</h3>
+          <button id="accept-button" class="accept-btn">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vincular el archivo de JavaScript -->
+  <script src="js/reservas.js" defer></script> <!-- Usar un nuevo archivo reservas.js -->
+</body>
+</html>

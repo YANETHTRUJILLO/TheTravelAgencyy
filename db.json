@@ -1,0 +1,45 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Yaneth Trujillo",
+      "email": "cytrujillo@poligran.edu.co",
+      "password": "12345678"
+    },
+    {
+      "id": 2,
+      "name": "Fredy Cáceres",
+      "email": "fredycc@gmail.com",
+      "password": "123456"
+    }
+  ],
+  "reservations": [
+    {
+      "id": 1,
+      "userId": 1,
+      "checkIn": "2024-10-10",
+      "checkOut": "2024-10-15",
+      "adults": 2,
+      "children": 0,
+      "roomType": "doble"
+    },
+    {
+      "id": "db99",
+      "userId": 1,
+      "checkIn": "2024-10-04",
+      "checkOut": "2024-10-07",
+      "adults": "2",
+      "children": "1",
+      "roomType": "doble"
+    },
+    {
+      "id": "4449",
+      "userId": 2,
+      "checkIn": "2024-10-18",
+      "checkOut": "2024-10-22",
+      "adults": "2",
+      "children": "2",
+      "roomType": "doble"
+    }
+  ]
+}
