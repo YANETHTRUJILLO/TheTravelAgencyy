@@ -345,16 +345,16 @@ footer {
   font-size: 24px; 
   text-align: center; 
 }
-/* Estilos para el nombre del usuario y el icono */
+/* icono user*/
 #user-name {
-  margin-left: 20px; /* Espacio a la izquierda del icono */
-  font-size: 1.5rem; /* Tamaño de la fuente */
-  display: flex; /* Para alinear el icono y el texto */
-  align-items: center; /* Centrar verticalmente el icono y el texto */
+  margin-left: 20px; 
+  font-size: 1.5rem; 
+  display: flex; 
+  align-items: center; 
 }
 
 #user-name i {
-  color: blak; /* Color del icono */
-  font-size: 35px; /* Tamaño del icono */
-  margin-right: 10px; /* Espacio entre el icono y el nombre */
+  color: blak; 
+  font-size: 35px; 
+  margin-right: 10px; 
 }

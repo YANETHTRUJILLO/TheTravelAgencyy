@@ -1,20 +1,20 @@
 document.getElementById('login-form').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevenir el envío predeterminado del formulario
+  event.preventDefault(); // Prevent default form submission
 
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
 
-  // Realizar la solicitud a JSON Server
+  // Request to JSON Server
   fetch(`http://localhost:3000/users?email=${email}&password=${password}`)
     .then(response => response.json())
     .then(data => {
       if (data.length > 0) {
         alert('Login exitoso!');
 
-        // Guardar el id y el nombre del usuario en localStorage
+        // Save user id and name in localStorage
         localStorage.setItem('user', JSON.stringify({ id: data[0].id, name: data[0].name }));
 
-        window.location.href = 'inicio.html'; // Redirigir a la página de inicio
+        window.location.href = 'inicio.html'; // Redirect to home page
       } else {
         alert('Usuario o contraseña incorrectos');
       }

@@ -1,32 +1,32 @@
 document.getElementById('register-form').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevenir el envío predeterminado del formulario
+  event.preventDefault(); 
 
-  const name = document.getElementById('name').value; // Obtener el nombre ingresado
-  const email = document.getElementById('email').value; // Obtener el email ingresado
-  const password = document.getElementById('password').value; // Obtener la contraseña ingresada
+  const name = document.getElementById('name').value; 
+  const email = document.getElementById('email').value; 
+  const password = document.getElementById('password').value; 
 
-  // Crear un nuevo usuario
+  // Create a new user
   const newUser = {
     name: name,
     email: email,
-    password: password // Recuerda que en producción deberías hashear esta contraseña
+    password: password 
   };
 
-  // Enviar la solicitud POST a JSON Server
+  // Send POST request to JSON Server
   fetch('http://localhost:3000/users', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(newUser) // Convertir el objeto a JSON
+    body: JSON.stringify(newUser) // Convert object to JSON
   })
-  .then(response => response.json()) // Convertir la respuesta a JSON
+  .then(response => response.json()) // Convert response to JSON
   .then(data => {
-    alert('Registro exitoso!'); // Alerta de éxito
-    window.location.href = 'login.html'; // Redirigir al login
+    alert('Registro exitoso!'); 
+    window.location.href = 'login.html'; 
   })
   .catch(error => {
-    console.error('Error en el registro:', error); // Manejo de errores
+    console.error('Error en el registro:', error); // Error handling
     alert('Hubo un problema con el registro.');
   });
 });

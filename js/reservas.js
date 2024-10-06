@@ -1,24 +1,24 @@
 document.getElementById('reservation-form').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevenir el envío del formulario
+  event.preventDefault(); // Prevent form submission
 
-  const checkIn = document.getElementById('checkin').value; // Obtener la fecha de ingreso
-  const checkOut = document.getElementById('checkout').value; // Obtener la fecha de salida
-  const adults = document.getElementById('adults').value; // Obtener el número de adultos
-  const children = document.getElementById('children').value; // Obtener el número de niños
-  const roomType = document.querySelector('input[name="room_type"]:checked').value; // Obtener el tipo de habitación
+  const checkIn = document.getElementById('checkin').value; // Get the date of entry
+  const checkOut = document.getElementById('checkout').value; // Get the departure date
+  const adults = document.getElementById('adults').value; // Get the number of adults
+  const children = document.getElementById('children').value; // Get the number of children
+  const roomType = document.querySelector('input[name="room_type"]:checked').value; // Get room type
 
-  // Obtener el usuario logueado
+  // Get the logged in user
   const user = JSON.parse(localStorage.getItem('user'));
 
   if (!user) {
     alert('Debe iniciar sesión para realizar una reserva');
-    window.location.href = 'login.html'; // Redirigir al login si no está logueado
+    window.location.href = 'login.html'; // Redirect to login if not logged in
     return;
   }
 
-  // Crear una nueva reserva
+  // Create a new reservation
   const newReservation = {
-    userId: user.id, // ID del usuario logueado
+    userId: user.id, 
     checkIn: checkIn,
     checkOut: checkOut,
     adults: adults,
@@ -26,27 +26,27 @@ document.getElementById('reservation-form').addEventListener('submit', function(
     roomType: roomType
   };
 
-  // Enviar la solicitud POST a JSON Server
+  // Send POST request to JSON Server
   fetch('http://localhost:3000/reservations', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(newReservation) // Convertir el objeto a JSON
+    body: JSON.stringify(newReservation) 
   })
-  .then(response => response.json()) // Convertir la respuesta a JSON
+  .then(response => response.json()) 
   .then(data => {
-    // Mostrar el popup de confirmación
+    // Show confirmation popup
     document.getElementById('confirmation-popup').style.display = 'flex';
   })
   .catch(error => {
-    console.error('Error en la reserva:', error); // Manejo de errores
+    console.error('Error en la reserva:', error); // Error handling
     alert('Hubo un problema con la reserva.');
   });
 });
 
-// Manejar el botón "Aceptar" en el popup
+// Handling the "OK" button in the popup
 document.getElementById('accept-button').addEventListener('click', function() {
-  document.getElementById('confirmation-popup').style.display = 'none'; // Ocultar el popup
-  window.location.href = 'inicio.html'; // Redirigir al inicio
+  document.getElementById('confirmation-popup').style.display = 'none'; 
+  window.location.href = 'inicio.html'; 
 });
